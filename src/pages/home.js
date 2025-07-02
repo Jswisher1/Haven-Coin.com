@@ -52,17 +52,117 @@ export default class HomePage {
         </div>
       </section>
 
+      <section class="section">
+        <div class="container">
+          <div class="text-center fade-in">
+            <h2>Why Choose Haven Coin & Jewelry?</h2>
+            <p>Over 20 years of trusted expertise in New Haven</p>
+          </div>
+          
+          <div class="services-grid">
+            <div class="service-card fade-in">
+              <div class="service-icon">🏆</div>
+              <h3>Expert Knowledge</h3>
+              <p>Our certified professionals have decades of experience in numismatics and gemology. We're members of the American Numismatic Association and employ GIA-certified gemologists.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+              <div class="service-icon">🔒</div>
+              <h3>Authenticity Guaranteed</h3>
+              <p>Every item undergoes rigorous authentication using state-of-the-art equipment and expert evaluation. We stand behind every piece we sell with comprehensive guarantees.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+              <div class="service-icon">💯</div>
+              <h3>Fair & Transparent Pricing</h3>
+              <p>No hidden fees or surprise charges. Our pricing is based on current market values with complete transparency in our evaluation process.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+              <div class="service-icon">🏘️</div>
+              <h3>Local New Haven Business</h3>
+              <p>Family-owned and operated since 2003, we're committed to serving our community and building lasting relationships with our customers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="about-preview">
         <div class="container">
           <div class="about-content">
             <div class="about-text fade-in">
               <h2>Trusted Expertise Since 2003</h2>
               <p>Located in the heart of New Haven, Connecticut, Haven Coin & Jewelry has been serving collectors, investors, and jewelry enthusiasts for over two decades.</p>
-              <p>Our family-owned business combines traditional craftsmanship with modern expertise, offering unparalleled service in numismatics and fine jewelry.</p>
+              <p>Our family-owned business combines traditional craftsmanship with modern expertise, offering unparalleled service in numismatics and fine jewelry. From rare ancient coins to contemporary engagement rings, we provide expert guidance for every customer.</p>
+              <p>Whether you're starting your first collection, looking for that perfect engagement ring, or seeking professional appraisal services, our team is here to help you every step of the way.</p>
               <a href="/about" class="btn btn-outline" data-route="/about">Learn More About Us</a>
             </div>
             <div class="about-image fade-in">
               <img src="https://images.pexels.com/photos/1232594/pexels-photo-1232594.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Haven Coin & Jewelry store interior">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+          <div class="text-center fade-in">
+            <h2>Featured Collections</h2>
+            <p>Discover some of our most sought-after pieces</p>
+          </div>
+          
+          <div class="services-grid">
+            <div class="service-card fade-in">
+              <div class="service-icon">🏛️</div>
+              <h3>Ancient Coins</h3>
+              <p>Rare Roman, Greek, and Byzantine coins dating back thousands of years. Each piece comes with detailed provenance and authentication certificates.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+              <div class="service-icon">💍</div>
+              <h3>Vintage Engagement Rings</h3>
+              <p>Stunning Art Deco and Victorian-era engagement rings featuring old European cut diamonds and intricate metalwork from bygone eras.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+              <div class="service-icon">🥇</div>
+              <h3>Gold Investment Coins</h3>
+              <p>American Eagles, Canadian Maple Leafs, and other government-minted gold coins perfect for precious metals portfolios and long-term investment.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+              <div class="service-icon">⌚</div>
+              <h3>Luxury Timepieces</h3>
+              <p>Carefully curated selection of vintage and contemporary luxury watches from renowned Swiss and American manufacturers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="text-center fade-in">
+            <h2>What Our Customers Say</h2>
+            <p>Read testimonials from our valued clients</p>
+          </div>
+          
+          <div class="services-grid">
+            <div class="service-card fade-in">
+              <h4>"Exceptional Service"</h4>
+              <p>"Michael and Sarah helped me find the perfect engagement ring. Their knowledge and patience made the entire process enjoyable. The custom design exceeded all expectations!"</p>
+              <small><strong>- David M., New Haven</strong></small>
+            </div>
+            
+            <div class="service-card fade-in">
+              <h4>"Trusted Coin Dealer"</h4>
+              <p>"I've been collecting coins for 30 years, and Haven Coin & Jewelry is the most knowledgeable and honest dealer I've worked with. Their authentication is impeccable."</p>
+              <small><strong>- Robert K., Hamden</strong></small>
+            </div>
+            
+            <div class="service-card fade-in">
+              <h4>"Fair Appraisal Service"</h4>
+              <p>"Needed an appraisal for my grandmother's jewelry collection. The detailed report was professional and the pricing was very fair. Highly recommend their services."</p>
+              <small><strong>- Jennifer L., West Haven</strong></small>
             </div>
           </div>
         </div>
