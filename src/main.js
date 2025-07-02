@@ -33,7 +33,7 @@ class HavenCoinApp {
         <div class="container">
           <nav class="nav">
             <a href="/" class="logo">
-              <span class="logo-icon">💎</span>
+              <img src="/favicon.svg" alt="Haven Coin & Jewelry" class="logo-icon" width="32" height="32">
               <span class="logo-text">Haven Coin & Jewelry</span>
             </a>
             
@@ -68,7 +68,7 @@ class HavenCoinApp {
           <div class="footer-content">
             <div class="footer-section">
               <div class="footer-logo">
-                <span class="logo-icon">💎</span>
+                <img src="/favicon.svg" alt="Haven Coin & Jewelry" class="logo-icon" width="24" height="24">
                 <span class="logo-text">Haven Coin & Jewelry</span>
               </div>
               <p>New Haven's premier destination for rare coins, precious metals, and fine jewelry since 2003.</p>
