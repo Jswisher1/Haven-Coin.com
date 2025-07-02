@@ -180,7 +180,7 @@ export default class JewelryPage {
     `
   }
 
-  init() {
+  async init() {
     // Initialize page-specific functionality
     const animationController = new (await import('../js/animations.js')).AnimationController()
     animationController.refresh()

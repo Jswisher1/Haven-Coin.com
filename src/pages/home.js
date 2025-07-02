@@ -10,9 +10,9 @@ export default class HomePage {
           <div class="hero-content fade-in">
             <h1 class="hero-title">
               <span class="title-line">Haven Coin</span>
-              <span class="title-line">&amp; Jewelry</span>
+              <span class="title-line">& Jewelry</span>
             </h1>
-            <p class="hero-subtitle">New Haven's Premier Destination for Rare Coins, Precious Metals &amp; Fine Jewelry</p>
+            <p class="hero-subtitle">New Haven's Premier Destination for Rare Coins, Precious Metals & Fine Jewelry</p>
             <div class="hero-buttons">
               <a href="/contact" class="btn btn-primary" data-route="/contact">Visit Our Store</a>
               <a href="/services" class="btn btn-secondary" data-route="/services">Our Services</a>
@@ -83,7 +83,7 @@ export default class HomePage {
     `
   }
 
-  init() {
+  async init() {
     // Initialize page-specific functionality
     const animationController = new (await import('../js/animations.js')).AnimationController()
     animationController.refresh()
