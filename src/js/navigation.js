@@ -1,59 +1,83 @@
-export function initializeNavigation() {
-  const header = document.querySelector('.header')
-  const mobileToggle = document.querySelector('.mobile-menu-toggle')
-  const navMenu = document.querySelector('.nav-menu')
-  const navLinks = document.querySelectorAll('.nav-link')
+export class Navigation {
+  constructor() {
+    this.header = null
+    this.mobileToggle = null
+    this.navMenu = null
+    this.isMenuOpen = false
+  }
 
-  // Handle scroll effect on header
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      header.classList.add('scrolled')
-    } else {
-      header.classList.remove('scrolled')
-    }
-  })
+  init() {
+    this.header = document.querySelector('.header')
+    this.mobileToggle = document.querySelector('.mobile-menu-toggle')
+    this.navMenu = document.querySelector('.nav-menu')
 
-  // Mobile menu toggle
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active')
-      mobileToggle.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰'
+    this.setupScrollEffect()
+    this.setupMobileMenu()
+  }
+
+  setupScrollEffect() {
+    let lastScrollY = window.scrollY
+    
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY
+      
+      if (currentScrollY > 100) {
+        this.header.classList.add('scrolled')
+      } else {
+        this.header.classList.remove('scrolled')
+      }
+
+      // Hide/show header on scroll
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        this.header.classList.add('hidden')
+      } else {
+        this.header.classList.remove('hidden')
+      }
+
+      lastScrollY = currentScrollY
+    })
+  }
+
+  setupMobileMenu() {
+    if (!this.mobileToggle || !this.navMenu) return
+
+    this.mobileToggle.addEventListener('click', () => {
+      this.toggleMobileMenu()
     })
 
-    // Close mobile menu when clicking on a link
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active')
-        mobileToggle.innerHTML = '☰'
-      })
+    // Close menu when clicking on a link
+    this.navMenu.addEventListener('click', (e) => {
+      if (e.target.classList.contains('nav-link')) {
+        this.closeMobileMenu()
+      }
     })
 
-    // Close mobile menu when clicking outside
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-        navMenu.classList.remove('active')
-        mobileToggle.innerHTML = '☰'
+      if (!this.navMenu.contains(e.target) && !this.mobileToggle.contains(e.target)) {
+        this.closeMobileMenu()
+      }
+    })
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isMenuOpen) {
+        this.closeMobileMenu()
       }
     })
   }
 
-  // Update active nav link based on scroll position
-  const sections = document.querySelectorAll('section[id]')
-  
-  window.addEventListener('scroll', () => {
-    let current = ''
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id')
-      }
-    })
+  toggleMobileMenu() {
+    this.isMenuOpen = !this.isMenuOpen
+    this.navMenu.classList.toggle('active', this.isMenuOpen)
+    this.mobileToggle.classList.toggle('active', this.isMenuOpen)
+    document.body.classList.toggle('menu-open', this.isMenuOpen)
+  }
 
-    navLinks.forEach(link => {
-      link.classList.remove('active')
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active')
-      }
-    })
-  })
+  closeMobileMenu() {
+    this.isMenuOpen = false
+    this.navMenu.classList.remove('active')
+    this.mobileToggle.classList.remove('active')
+    document.body.classList.remove('menu-open')
+  }
 }
