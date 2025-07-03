@@ -454,7 +454,7 @@ class HavenCoinApp {
 
   updatePageMeta(path) {
     const pageTitles = {
-      '/': 'Haven Coin & Jewelry - Premier Coin & Jewelry Store in New Haven, CT',
+      '/': 'Haven Coin & Jewelry - New Haven CT Coin & Jewelry Store',
       '/coins': 'Rare Coins & Collectibles - Haven Coin & Jewelry',
       '/jewelry': 'Fine Jewelry & Custom Design - Haven Coin & Jewelry',
       '/services': 'Our Services - Haven Coin & Jewelry',
@@ -495,7 +495,7 @@ class HavenCoinApp {
     
     if (ogTitle) ogTitle.setAttribute('content', pageTitles[path] || pageTitles['/404'])
     if (ogDescription) ogDescription.setAttribute('content', pageDescriptions[path] || pageDescriptions['/404'])
-    if (ogUrl) ogUrl.setAttribute('content', `https://haven-coin.com${path === '/' ? '' : path}`)
+    if (ogUrl) ogUrl.setAttribute('href', `https://haven-coin.com${path === '/' ? '' : path}`)
 
     // Update Twitter Card tags
     const twitterTitle = document.querySelector('meta[property="twitter:title"]')
@@ -504,7 +504,7 @@ class HavenCoinApp {
     
     if (twitterTitle) twitterTitle.setAttribute('content', pageTitles[path] || pageTitles['/404'])
     if (twitterDescription) twitterDescription.setAttribute('content', pageDescriptions[path] || pageDescriptions['/404'])
-    if (twitterUrl) twitterUrl.setAttribute('content', `https://haven-coin.com${path === '/' ? '' : path}`)
+    if (twitterUrl) twitterUrl.setAttribute('href', `https://haven-coin.com${path === '/' ? '' : path}`)
   }
 
   updateActiveNavLink(path) {
