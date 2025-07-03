@@ -244,6 +244,11 @@ p {
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.logo:hover {
+  transform: translateY(-1px);
 }
 
 .logo-icon {
@@ -258,7 +263,19 @@ p {
 }
 
 .logo-text {
-  color: var(--primary-gold);
+  color: var(--primary-gold) !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.025em;
+}
+
+/* Ensure logo text is always visible */
+.logo .logo-text {
+  color: var(--primary-gold) !important;
+}
+
+.footer .logo-text {
+  color: var(--primary-gold) !important;
 }
 
 .nav-menu {
@@ -704,7 +721,9 @@ p {
 }
 
 .footer-logo .logo-text {
-  color: var(--primary-gold);
+  color: var(--primary-gold) !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .footer-section h3 {
