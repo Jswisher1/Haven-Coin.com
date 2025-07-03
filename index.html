@@ -69,6 +69,123 @@
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    // Configure Google Analytics
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      page_title: document.title,
+      page_location: window.location.href,
+      send_page_view: true,
+      // Enhanced ecommerce and user engagement tracking
+      custom_map: {
+        'custom_parameter_1': 'page_category',
+        'custom_parameter_2': 'user_type'
+      },
+      // Privacy settings
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+
+    // Track custom events for SEO insights
+    gtag('event', 'page_view', {
+      page_title: document.title,
+      page_location: window.location.href,
+      content_group1: 'Homepage'
+    });
+
+    // Track site search (when implemented)
+    function trackSiteSearch(searchTerm, category, resultsCount) {
+      gtag('event', 'search', {
+        search_term: searchTerm,
+        content_category: category || 'general',
+        custom_parameter_1: resultsCount || 0
+      });
+    }
+
+    // Track form submissions
+    function trackFormSubmission(formName, formLocation) {
+      gtag('event', 'form_submit', {
+        form_name: formName,
+        form_location: formLocation,
+        event_category: 'engagement',
+        event_label: formName
+      });
+    }
+
+    // Track phone calls
+    function trackPhoneCall() {
+      gtag('event', 'phone_call', {
+        event_category: 'contact',
+        event_label: 'header_phone',
+        value: 1
+      });
+    }
+
+    // Track email clicks
+    function trackEmailClick() {
+      gtag('event', 'email_click', {
+        event_category: 'contact',
+        event_label: 'header_email',
+        value: 1
+      });
+    }
+
+    // Track social media clicks
+    function trackSocialClick(platform) {
+      gtag('event', 'social_click', {
+        event_category: 'social',
+        event_label: platform,
+        value: 1
+      });
+    }
+
+    // Track scroll depth for engagement
+    let scrollDepthTracked = false;
+    window.addEventListener('scroll', function() {
+      if (!scrollDepthTracked && window.scrollY > document.body.scrollHeight * 0.75) {
+        gtag('event', 'scroll_depth', {
+          event_category: 'engagement',
+          event_label: '75_percent',
+          value: 75
+        });
+        scrollDepthTracked = true;
+      }
+    });
+
+    // Track time on page
+    let startTime = Date.now();
+    window.addEventListener('beforeunload', function() {
+      let timeOnPage = Math.round((Date.now() - startTime) / 1000);
+      gtag('event', 'time_on_page', {
+        event_category: 'engagement',
+        event_label: 'seconds',
+        value: timeOnPage
+      });
+    });
+
+    // Make tracking functions available globally
+    window.trackSiteSearch = trackSiteSearch;
+    window.trackFormSubmission = trackFormSubmission;
+    window.trackPhoneCall = trackPhoneCall;
+    window.trackEmailClick = trackEmailClick;
+    window.trackSocialClick = trackSocialClick;
+  </script>
+
+  <!-- Google Tag Manager (optional, for more advanced tracking) -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+
   <!-- Critical CSS inline to prevent render blocking -->
   <style>
     /* Critical above-the-fold styles */
@@ -86,6 +203,12 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
   
@@ -97,6 +220,91 @@
       link.href = '/src/style.css';
       document.head.appendChild(link);
     });
+  </script>
+
+  <!-- Structured Data for Enhanced Search Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://haven-coin.com/#website",
+        "url": "https://haven-coin.com/",
+        "name": "Haven Coin & Jewelry",
+        "description": "Premier coin and jewelry store in New Haven, Connecticut",
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://haven-coin.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://haven-coin.com/#organization",
+        "name": "Haven Coin & Jewelry",
+        "url": "https://haven-coin.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://haven-coin.com/#/schema/logo/image/",
+          "url": "https://haven-coin.com/favicon.svg",
+          "contentUrl": "https://haven-coin.com/favicon.svg",
+          "width": 512,
+          "height": 512,
+          "caption": "Haven Coin & Jewelry"
+        },
+        "image": {
+          "@id": "https://haven-coin.com/#/schema/logo/image/"
+        },
+        "sameAs": [
+          "https://www.facebook.com/havencoinjewelry",
+          "https://www.instagram.com/havencoinjewelry",
+          "https://twitter.com/havencoinjewelry"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-203-555-0123",
+            "contactType": "customer service",
+            "areaServed": "US",
+            "availableLanguage": "en"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://haven-coin.com/#webpage",
+        "url": "https://haven-coin.com/",
+        "name": "Haven Coin & Jewelry - Premier Coin & Jewelry Store in New Haven, CT",
+        "isPartOf": {
+          "@id": "https://haven-coin.com/#website"
+        },
+        "about": {
+          "@id": "https://haven-coin.com/#organization"
+        },
+        "description": "Haven Coin & Jewelry in New Haven, Connecticut offers rare coins, precious metals, fine jewelry, and expert appraisal services.",
+        "breadcrumb": {
+          "@id": "https://haven-coin.com/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://haven-coin.com/"
+            ]
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </body>
 </html>

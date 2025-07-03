@@ -1,21 +1,119 @@
+# Robots.txt for Haven Coin & Jewelry
+# https://haven-coin.com/robots.txt
+
 User-agent: *
 Allow: /
 
-Sitemap: https://haven-coin.com/sitemap.xml
-
-# Specific instructions for search engines
+# Allow all major search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
-# Block access to admin areas (if any)
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Block access to sensitive areas
 Disallow: /admin/
 Disallow: /private/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.env
+Disallow: /.htaccess
 
-# Allow access to important pages
-Allow: /
-Allow: /services
-Allow: /about
-Allow: /contact
+# Block access to development and testing files
+Disallow: /test/
+Disallow: /tests/
+Disallow: /dev/
+Disallow: /staging/
+Disallow: /*.log$
+Disallow: /*.tmp$
+Disallow: /*.bak$
+
+# Block access to common CMS and framework files
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /administrator/
+Disallow: /includes/
+Disallow: /misc/
+Disallow: /modules/
+Disallow: /profiles/
+Disallow: /scripts/
+Disallow: /themes/
+
+# Block access to search and filter pages that might create duplicate content
+Disallow: /*?search=*
+Disallow: /*?filter=*
+Disallow: /*?sort=*
+Disallow: /*?page=*
+Disallow: /*?utm_*
+
+# Block access to print versions and session IDs
+Disallow: /*?print=*
+Disallow: /*?sid=*
+Disallow: /*?sessionid=*
+
+# Block common bot traps
+Disallow: /trap/
+Disallow: /honeypot/
+
+# Allow access to important files
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.pdf$
+
+# Sitemap location
+Sitemap: https://haven-coin.com/sitemap.xml
+
+# Additional sitemaps for different content types
+Sitemap: https://haven-coin.com/sitemap-images.xml
+Sitemap: https://haven-coin.com/sitemap-news.xml
+
+# Host directive (helps with canonicalization)
+Host: https://haven-coin.com
+
+# Cache directive for robots.txt (optional, not all crawlers respect this)
+# Cache-delay: 86400

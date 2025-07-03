@@ -20,6 +20,7 @@ class HavenCoinApp {
     this.createLayout()
     this.setupNavigation()
     this.setupRedirects()
+    this.setupAnalytics()
     await this.loadPage(this.getPageFromURL())
     this.initializeAnimations()
   }
@@ -46,6 +47,123 @@ class HavenCoinApp {
       const newPath = window.location.pathname.slice(0, -1)
       window.history.replaceState({}, '', newPath + window.location.search + window.location.hash)
     }
+  }
+
+  setupAnalytics() {
+    // Enhanced analytics tracking for SEO insights
+    this.trackPagePerformance()
+    this.setupErrorTracking()
+    this.setupUserEngagementTracking()
+  }
+
+  trackPagePerformance() {
+    // Track Core Web Vitals for SEO
+    if ('web-vital' in window) {
+      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+        getCLS(this.sendToAnalytics)
+        getFID(this.sendToAnalytics)
+        getFCP(this.sendToAnalytics)
+        getLCP(this.sendToAnalytics)
+        getTTFB(this.sendToAnalytics)
+      })
+    }
+
+    // Track page load times
+    window.addEventListener('load', () => {
+      const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_load_time', {
+          event_category: 'performance',
+          event_label: 'milliseconds',
+          value: loadTime
+        })
+      }
+    })
+  }
+
+  sendToAnalytics(metric) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', metric.name, {
+        event_category: 'web_vitals',
+        event_label: metric.id,
+        value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+        non_interaction: true
+      })
+    }
+  }
+
+  setupErrorTracking() {
+    // Track JavaScript errors for SEO diagnostics
+    window.addEventListener('error', (event) => {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'javascript_error', {
+          event_category: 'error',
+          event_label: event.message,
+          value: 1,
+          non_interaction: true
+        })
+      }
+    })
+
+    // Track unhandled promise rejections
+    window.addEventListener('unhandledrejection', (event) => {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'promise_rejection', {
+          event_category: 'error',
+          event_label: event.reason,
+          value: 1,
+          non_interaction: true
+        })
+      }
+    })
+  }
+
+  setupUserEngagementTracking() {
+    // Track clicks on important elements
+    document.addEventListener('click', (e) => {
+      // Track phone number clicks
+      if (e.target.matches('a[href^="tel:"]')) {
+        if (typeof trackPhoneCall !== 'undefined') {
+          trackPhoneCall()
+        }
+      }
+
+      // Track email clicks
+      if (e.target.matches('a[href^="mailto:"]')) {
+        if (typeof trackEmailClick !== 'undefined') {
+          trackEmailClick()
+        }
+      }
+
+      // Track social media clicks
+      if (e.target.closest('.social-links a')) {
+        const platform = e.target.closest('a').getAttribute('aria-label')
+        if (typeof trackSocialClick !== 'undefined') {
+          trackSocialClick(platform)
+        }
+      }
+
+      // Track CTA button clicks
+      if (e.target.matches('.btn-primary, .cta-button')) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'cta_click', {
+            event_category: 'engagement',
+            event_label: e.target.textContent.trim(),
+            value: 1
+          })
+        }
+      }
+    })
+
+    // Track form submissions
+    document.addEventListener('submit', (e) => {
+      if (e.target.matches('form')) {
+        const formName = e.target.className || 'unknown_form'
+        if (typeof trackFormSubmission !== 'undefined') {
+          trackFormSubmission(formName, window.location.pathname)
+        }
+      }
+    })
   }
 
   getPageFromURL() {
@@ -284,6 +402,20 @@ class HavenCoinApp {
       // Update page title and meta description
       this.updatePageMeta(path)
 
+      // Track page view in analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('config', 'GA_MEASUREMENT_ID', {
+          page_title: document.title,
+          page_location: window.location.href
+        })
+        
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          content_group1: this.getPageCategory(path)
+        })
+      }
+
     } catch (error) {
       console.error('Error loading page:', error)
       const mainContent = document.getElementById('main-content')
@@ -294,7 +426,30 @@ class HavenCoinApp {
           <button onclick="window.location.reload()" class="btn btn-primary">Try Again</button>
         </div>
       `
+
+      // Track errors in analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_load_error', {
+          event_category: 'error',
+          event_label: path,
+          value: 1
+        })
+      }
     }
+  }
+
+  getPageCategory(path) {
+    const categories = {
+      '/': 'Homepage',
+      '/coins': 'Products',
+      '/jewelry': 'Products', 
+      '/services': 'Services',
+      '/about': 'About',
+      '/contact': 'Contact',
+      '/blog': 'Blog',
+      '/404': 'Error'
+    }
+    return categories[path] || 'Other'
   }
 
   updatePageMeta(path) {
@@ -332,6 +487,24 @@ class HavenCoinApp {
     if (canonical) {
       canonical.setAttribute('href', `https://haven-coin.com${path === '/' ? '' : path}`)
     }
+
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]')
+    const ogDescription = document.querySelector('meta[property="og:description"]')
+    const ogUrl = document.querySelector('meta[property="og:url"]')
+    
+    if (ogTitle) ogTitle.setAttribute('content', pageTitles[path] || pageTitles['/404'])
+    if (ogDescription) ogDescription.setAttribute('content', pageDescriptions[path] || pageDescriptions['/404'])
+    if (ogUrl) ogUrl.setAttribute('content', `https://haven-coin.com${path === '/' ? '' : path}`)
+
+    // Update Twitter Card tags
+    const twitterTitle = document.querySelector('meta[property="twitter:title"]')
+    const twitterDescription = document.querySelector('meta[property="twitter:description"]')
+    const twitterUrl = document.querySelector('meta[property="twitter:url"]')
+    
+    if (twitterTitle) twitterTitle.setAttribute('content', pageTitles[path] || pageTitles['/404'])
+    if (twitterDescription) twitterDescription.setAttribute('content', pageDescriptions[path] || pageDescriptions['/404'])
+    if (twitterUrl) twitterUrl.setAttribute('content', `https://haven-coin.com${path === '/' ? '' : path}`)
   }
 
   updateActiveNavLink(path) {
@@ -391,6 +564,11 @@ class HavenCoinApp {
           // Show success message
           this.showNotification('Thank you! Your message has been sent successfully.', 'success')
           newForm.reset()
+
+          // Track form submission in analytics
+          if (typeof trackFormSubmission !== 'undefined') {
+            trackFormSubmission('contact_form', window.location.pathname)
+          }
           
         } catch (error) {
           this.showNotification('Sorry, there was an error sending your message. Please try again.', 'error')
