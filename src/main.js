@@ -19,6 +19,9 @@ class HavenCoinApp {
   }
 
   async init() {
+    // Ensure fallback content is hidden once JavaScript loads
+    this.hideFallbackContent()
+    
     this.createLayout()
     this.setupNavigation()
     this.setupRedirects()
@@ -26,6 +29,14 @@ class HavenCoinApp {
     this.setupPerformanceOptimizations()
     await this.loadPage(this.getPageFromURL())
     this.initializeAnimations()
+  }
+
+  hideFallbackContent() {
+    // Hide SEO fallback content once JavaScript is ready
+    const seoContent = document.querySelector('.seo-content')
+    if (seoContent) {
+      seoContent.style.display = 'none'
+    }
   }
 
   setupPerformanceOptimizations() {
