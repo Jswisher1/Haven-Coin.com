@@ -200,11 +200,20 @@ class HavenCoinApp {
     })
   }
 
-  async navigate(path) {
-    if (this.currentPage === path) return
+  async navigate(route) {
+    // Handle blog post URLs with query parameters
+    let path = route
+    let search = ''
     
-    // Update URL without page reload
-    window.history.pushState({}, '', path)
+    if (route.includes('?')) {
+      [path, search] = route.split('?')
+    }
+    
+    if (this.currentPage === path && window.location.search === (search ? '?' + search : '')) return
+    
+    // Update URL with full route including query parameters
+    const fullUrl = search ? `${path}?${search}` : path
+    window.history.pushState({}, '', fullUrl)
     await this.loadPage(path)
   }
 

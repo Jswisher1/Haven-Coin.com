@@ -108,40 +108,6 @@ export default class BlogPage {
 
           <p>The Victorian era's emphasis on symbolism resonates with modern couples who want their rings to carry deeper meaning. Common symbols include serpents (representing eternal love), hearts (devotion), and flowers (various meanings depending on the type).</p>
 
-          <h3>Edwardian Elegance (1901-1915)</h3>
-          <p>The Edwardian period brought a lighter, more delicate aesthetic to jewelry design. These rings are characterized by their feminine grace and technical innovation.</p>
-
-          <p><strong>Edwardian Ring Features:</strong></p>
-          <ul>
-            <li>Delicate filigree work</li>
-            <li>Garland and bow motifs</li>
-            <li>Extensive use of platinum</li>
-            <li>Old European cut diamonds</li>
-            <li>Pearls and diamond combinations</li>
-            <li>Knife-edge settings</li>
-          </ul>
-
-          <h3>Authentic vs. Reproduction</h3>
-          <p>When considering vintage-style engagement rings, couples have two main options: authentic antique pieces or modern reproductions inspired by historical designs.</p>
-
-          <p><strong>Authentic Antique Rings:</strong></p>
-          <ul>
-            <li>Genuine historical pieces with provenance</li>
-            <li>Unique characteristics and patina of age</li>
-            <li>Investment potential and historical significance</li>
-            <li>May require restoration or sizing adjustments</li>
-            <li>Limited availability in specific sizes and styles</li>
-          </ul>
-
-          <p><strong>Vintage-Inspired Reproductions:</strong></p>
-          <ul>
-            <li>New rings crafted in historical styles</li>
-            <li>Modern materials and construction techniques</li>
-            <li>Customizable to specific preferences and sizes</li>
-            <li>Often more durable than century-old pieces</li>
-            <li>Can incorporate modern diamond cuts with vintage settings</li>
-          </ul>
-
           <h3>Choosing the Right Vintage Style</h3>
           <p>Selecting the perfect vintage-inspired engagement ring requires consideration of several factors:</p>
 
@@ -150,22 +116,6 @@ export default class BlogPage {
           <p><strong>Lifestyle Compatibility:</strong> Some vintage styles may be more suitable for daily wear than others. Delicate Edwardian filigree, for example, may require more careful handling than a sturdy Art Deco design.</p>
 
           <p><strong>Budget Considerations:</strong> Authentic antique rings can vary widely in price depending on rarity, condition, and provenance. Vintage-inspired reproductions often offer similar aesthetics at more predictable price points.</p>
-
-          <p><strong>Customization Desires:</strong> If you want to incorporate specific elements or make modifications, a vintage-inspired custom design may be the best option.</p>
-
-          <h3>Caring for Vintage and Vintage-Inspired Rings</h3>
-          <p>Vintage-style engagement rings, whether authentic antiques or modern reproductions, require special care to maintain their beauty and integrity:</p>
-
-          <ul>
-            <li>Regular professional cleaning and inspection</li>
-            <li>Gentle handling to protect delicate details</li>
-            <li>Proper storage when not being worn</li>
-            <li>Professional restoration when needed</li>
-            <li>Insurance coverage appropriate to the ring's value</li>
-          </ul>
-
-          <h3>The Future of Vintage Style</h3>
-          <p>The trend toward vintage-inspired engagement rings shows no signs of slowing down. As couples increasingly seek meaningful, unique pieces that reflect their personal style and values, vintage designs offer the perfect combination of beauty, history, and individuality.</p>
 
           <p>At Haven Coin & Jewelry, we specialize in both authentic vintage engagement rings and custom vintage-inspired designs. Our expert jewelers can help you find or create the perfect ring that captures the romance of the past while celebrating your future together.</p>
 
@@ -228,24 +178,6 @@ export default class BlogPage {
             <li><strong>Roosevelt Dimes:</strong> Silver content in pre-1965 examples adds interest</li>
           </ul>
 
-          <p><strong>World Coins</strong></p>
-          <p>International coins offer incredible diversity and are often very affordable:</p>
-          <ul>
-            <li>Large world coin lots for variety</li>
-            <li>Coins from countries you've visited</li>
-            <li>Themed collections (animals, ships, etc.)</li>
-            <li>Coins from specific time periods</li>
-          </ul>
-
-          <p><strong>Commemorative Coins</strong></p>
-          <p>Modern commemoratives celebrate important events and people:</p>
-          <ul>
-            <li>Olympic Games commemoratives</li>
-            <li>Historical anniversary coins</li>
-            <li>Presidential commemoratives</li>
-            <li>National park quarters</li>
-          </ul>
-
           <h3>Understanding Coin Grading</h3>
           <p>Coin condition significantly affects value. The Sheldon Scale (1-70) is the standard grading system:</p>
 
@@ -280,34 +212,6 @@ export default class BlogPage {
             <li><strong>Storage Box:</strong> For organizing supplies and extra coins</li>
           </ul>
 
-          <p><strong>Advanced Supplies:</strong></p>
-          <ul>
-            <li>Digital scale for weight verification</li>
-            <li>Caliper for measuring dimensions</li>
-            <li>Reference books and price guides</li>
-            <li>Camera for documentation</li>
-            <li>Safe or security box for valuable items</li>
-          </ul>
-
-          <h3>Where to Buy Coins</h3>
-          <p><strong>Reputable Sources:</strong></p>
-          <ul>
-            <li><strong>Local Coin Shops:</strong> Personal service and expertise</li>
-            <li><strong>Coin Shows:</strong> Wide selection and competitive prices</li>
-            <li><strong>Established Online Dealers:</strong> Convenience and large inventories</li>
-            <li><strong>Auction Houses:</strong> For rare and high-value pieces</li>
-            <li><strong>Estate Sales:</strong> Potential for finding overlooked treasures</li>
-          </ul>
-
-          <p><strong>What to Avoid:</strong></p>
-          <ul>
-            <li>TV shopping networks with inflated prices</li>
-            <li>Unverified online sellers</li>
-            <li>Deals that seem too good to be true</li>
-            <li>Pressure sales tactics</li>
-            <li>Coins without proper authentication</li>
-          </ul>
-
           <h3>Common Beginner Mistakes</h3>
           <p>Learning from others' experiences can save you time and money:</p>
 
@@ -318,47 +222,6 @@ export default class BlogPage {
             <li><strong>Cleaning Coins:</strong> Never clean coins - it almost always reduces their value</li>
             <li><strong>Lack of Focus:</strong> Scattered collecting rarely builds valuable collections</li>
             <li><strong>Ignoring Condition:</strong> Understanding grading is essential for making good purchases</li>
-          </ul>
-
-          <h3>Building Your Collection Strategy</h3>
-          <p><strong>Type Collecting:</strong> Collect one example of each major design type</p>
-          <p><strong>Date Collecting:</strong> Collect one coin from each year of a particular series</p>
-          <p><strong>Variety Collecting:</strong> Focus on different varieties and mint marks within a series</p>
-          <p><strong>Condition Collecting:</strong> Collect the highest grade examples you can afford</p>
-          <p><strong>Thematic Collecting:</strong> Focus on coins with common themes or subjects</p>
-
-          <h3>Joining the Numismatic Community</h3>
-          <p>Connecting with other collectors enhances your enjoyment and knowledge:</p>
-
-          <ul>
-            <li><strong>Local Coin Clubs:</strong> Regular meetings and educational programs</li>
-            <li><strong>American Numismatic Association (ANA):</strong> National organization with extensive resources</li>
-            <li><strong>Online Forums:</strong> 24/7 access to collector discussions and advice</li>
-            <li><strong>Coin Shows:</strong> Opportunities to buy, sell, and learn</li>
-            <li><strong>Educational Seminars:</strong> Formal learning opportunities</li>
-          </ul>
-
-          <h3>Record Keeping and Documentation</h3>
-          <p>Maintaining detailed records is essential for serious collectors:</p>
-
-          <ul>
-            <li>Purchase date and price</li>
-            <li>Dealer or source information</li>
-            <li>Coin details (date, mint mark, grade)</li>
-            <li>Current market value</li>
-            <li>High-quality photographs</li>
-            <li>Insurance documentation</li>
-          </ul>
-
-          <h3>Looking Ahead: Growing Your Collection</h3>
-          <p>As your knowledge and experience grow, you may want to:</p>
-
-          <ul>
-            <li>Upgrade to higher-grade examples</li>
-            <li>Focus on specific areas of interest</li>
-            <li>Consider certified coins for valuable pieces</li>
-            <li>Explore more challenging collecting areas</li>
-            <li>Share your knowledge with other beginners</li>
           </ul>
 
           <h3>Conclusion</h3>
@@ -418,8 +281,8 @@ export default class BlogPage {
             <div class="post-share">
               <h4>Share this article:</h4>
               <div class="share-buttons">
-                <button onclick="navigator.share ? navigator.share({title: '${post.title}', url: window.location.href}) : alert('Sharing not supported')" class="btn btn-outline">Share</button>
-                <button onclick="navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))" class="btn btn-outline">Copy Link</button>
+                <button onclick="this.sharePost('${post.title}')" class="btn btn-outline">Share</button>
+                <button onclick="this.copyLink()" class="btn btn-outline">Copy Link</button>
               </div>
             </div>
           </div>
@@ -503,14 +366,14 @@ export default class BlogPage {
               <div class="sidebar-widget fade-in">
                 <h3>Categories</h3>
                 <ul class="category-list">
-                  <li><a href="/blog">Market Analysis <span>(4)</span></a></li>
-                  <li><a href="/blog">Jewelry <span>(6)</span></a></li>
-                  <li><a href="/blog">Collecting <span>(8)</span></a></li>
-                  <li><a href="/blog">Care Tips <span>(3)</span></a></li>
-                  <li><a href="/blog">Investment <span>(5)</span></a></li>
-                  <li><a href="/blog">Design <span>(2)</span></a></li>
-                  <li><a href="/blog">History <span>(4)</span></a></li>
-                  <li><a href="/blog">Education <span>(7)</span></a></li>
+                  <li><a href="/blog" data-route="/blog">Market Analysis <span>(4)</span></a></li>
+                  <li><a href="/blog" data-route="/blog">Jewelry <span>(6)</span></a></li>
+                  <li><a href="/blog" data-route="/blog">Collecting <span>(8)</span></a></li>
+                  <li><a href="/blog" data-route="/blog">Care Tips <span>(3)</span></a></li>
+                  <li><a href="/blog" data-route="/blog">Investment <span>(5)</span></a></li>
+                  <li><a href="/blog" data-route="/blog">Design <span>(2)</span></a></li>
+                  <li><a href="/blog" data-route="/blog">History <span>(4)</span></a></li>
+                  <li><a href="/blog" data-route="/blog">Education <span>(7)</span></a></li>
                 </ul>
               </div>
 
@@ -583,6 +446,25 @@ export default class BlogPage {
       .slice(0, 2)
   }
 
+  sharePost(title) {
+    if (navigator.share) {
+      navigator.share({
+        title: title,
+        url: window.location.href
+      }).catch(console.error)
+    } else {
+      alert('Sharing not supported on this device')
+    }
+  }
+
+  copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('Link copied to clipboard!')
+    }).catch(() => {
+      alert('Could not copy link')
+    })
+  }
+
   async init() {
     // Initialize page-specific functionality
     const animationController = new (await import('../js/animations.js')).AnimationController()
@@ -601,21 +483,9 @@ export default class BlogPage {
       })
     }
 
-    // Handle blog post navigation
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('[data-route^="/blog"]')
-      if (link) {
-        e.preventDefault()
-        const route = link.getAttribute('data-route')
-        window.history.pushState({}, '', route)
-        this.handleRouteChange()
-      }
-    })
-
-    // Handle browser back/forward
-    window.addEventListener('popstate', () => {
-      this.handleRouteChange()
-    })
+    // Add share and copy functionality to window for onclick handlers
+    window.sharePost = this.sharePost.bind(this)
+    window.copyLink = this.copyLink.bind(this)
 
     // Add hover effects to tags
     const tags = document.querySelectorAll('.tag')
@@ -629,13 +499,5 @@ export default class BlogPage {
         tag.style.color = 'var(--text-dark)'
       })
     })
-  }
-
-  handleRouteChange() {
-    const mainContent = document.getElementById('main-content')
-    if (mainContent) {
-      mainContent.innerHTML = this.render()
-      this.init()
-    }
   }
 }
