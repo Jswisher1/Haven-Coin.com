@@ -10,7 +10,8 @@ class HavenCoinApp {
       '/services': () => import('./pages/services.js'),
       '/about': () => import('./pages/about.js'),
       '/contact': () => import('./pages/contact.js'),
-      '/blog': () => import('./pages/blog.js')
+      '/blog': () => import('./pages/blog.js'),
+      '/404': () => import('./pages/404.js')
     }
     this.init()
   }
@@ -18,13 +19,38 @@ class HavenCoinApp {
   async init() {
     this.createLayout()
     this.setupNavigation()
+    this.setupRedirects()
     await this.loadPage(this.getPageFromURL())
     this.initializeAnimations()
   }
 
+  setupRedirects() {
+    // Handle URL canonicalization - redirect to preferred URLs
+    const currentUrl = window.location.href
+    const preferredDomain = 'https://haven-coin.com'
+    
+    // Redirect www to non-www (or vice versa based on preference)
+    if (currentUrl.includes('www.haven-coin.com')) {
+      window.location.replace(currentUrl.replace('www.haven-coin.com', 'haven-coin.com'))
+      return
+    }
+    
+    // Redirect HTTP to HTTPS
+    if (currentUrl.startsWith('http://')) {
+      window.location.replace(currentUrl.replace('http://', 'https://'))
+      return
+    }
+    
+    // Remove trailing slashes except for root
+    if (window.location.pathname !== '/' && window.location.pathname.endsWith('/')) {
+      const newPath = window.location.pathname.slice(0, -1)
+      window.history.replaceState({}, '', newPath + window.location.search + window.location.hash)
+    }
+  }
+
   getPageFromURL() {
     const path = window.location.pathname
-    return this.pages[path] ? path : '/'
+    return this.pages[path] ? path : '/404'
   }
 
   createLayout() {
@@ -73,9 +99,9 @@ class HavenCoinApp {
               </div>
               <p>New Haven's premier destination for rare coins, precious metals, and fine jewelry since 2003.</p>
               <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
-                <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+                <a href="https://www.facebook.com/havencoinjewelry" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="icon-facebook">📘</i></a>
+                <a href="https://www.instagram.com/havencoinjewelry" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="icon-instagram">📷</i></a>
+                <a href="https://twitter.com/havencoinjewelry" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="icon-twitter">🐦</i></a>
               </div>
             </div>
             
@@ -105,9 +131,9 @@ class HavenCoinApp {
             <div class="footer-section">
               <h3>Contact Info</h3>
               <div class="contact-info">
-                <p><i class="icon-location"></i> 123 Chapel Street<br>New Haven, CT 06510</p>
-                <p><i class="icon-phone"></i> <a href="tel:+12035550123">(203) 555-0123</a></p>
-                <p><i class="icon-email"></i> <a href="mailto:info@haven-coin.com">info@haven-coin.com</a></p>
+                <p><i class="icon-location">📍</i> 123 Chapel Street<br>New Haven, CT 06510</p>
+                <p><i class="icon-phone">📞</i> <a href="tel:+12035550123">(203) 555-0123</a></p>
+                <p><i class="icon-email">✉️</i> <a href="mailto:info@haven-coin.com">info@haven-coin.com</a></p>
               </div>
             </div>
           </div>
@@ -230,7 +256,7 @@ class HavenCoinApp {
       `
 
       // Load the page module
-      const pageLoader = this.pages[path] || this.pages['/']
+      const pageLoader = this.pages[path] || this.pages['/404']
       const pageModule = await pageLoader()
       const PageClass = pageModule.default
       const page = new PageClass()
@@ -255,6 +281,9 @@ class HavenCoinApp {
       // Initialize animations for new content
       this.initializeAnimations()
 
+      // Update page title and meta description
+      this.updatePageMeta(path)
+
     } catch (error) {
       console.error('Error loading page:', error)
       const mainContent = document.getElementById('main-content')
@@ -265,6 +294,43 @@ class HavenCoinApp {
           <button onclick="window.location.reload()" class="btn btn-primary">Try Again</button>
         </div>
       `
+    }
+  }
+
+  updatePageMeta(path) {
+    const pageTitles = {
+      '/': 'Haven Coin & Jewelry - Premier Coin & Jewelry Store in New Haven, CT',
+      '/coins': 'Rare Coins & Collectibles - Haven Coin & Jewelry',
+      '/jewelry': 'Fine Jewelry & Custom Design - Haven Coin & Jewelry',
+      '/services': 'Our Services - Haven Coin & Jewelry',
+      '/about': 'About Us - Haven Coin & Jewelry',
+      '/contact': 'Contact Us - Haven Coin & Jewelry',
+      '/blog': 'Blog & News - Haven Coin & Jewelry',
+      '/404': '404 - Page Not Found - Haven Coin & Jewelry'
+    }
+
+    const pageDescriptions = {
+      '/': 'Haven Coin & Jewelry in New Haven, Connecticut offers rare coins, precious metals, fine jewelry, and expert appraisal services.',
+      '/coins': 'Discover our extensive collection of rare and collectible coins from around the world, spanning ancient civilizations to modern commemoratives.',
+      '/jewelry': 'Exquisite fine jewelry including engagement rings, wedding bands, necklaces, and custom pieces crafted by skilled artisans.',
+      '/services': 'Comprehensive coin and jewelry services including appraisals, repairs, custom design, and precious metals trading.',
+      '/about': 'Learn about Haven Coin & Jewelry, New Haven\'s trusted coin and jewelry experts serving Connecticut since 2003.',
+      '/contact': 'Visit our New Haven showroom or contact Haven Coin & Jewelry for expert consultation on coins, jewelry, and precious metals.',
+      '/blog': 'Stay updated with the latest insights in coins, jewelry, precious metals, and collecting trends from our expert team.',
+      '/404': 'The page you\'re looking for could not be found. Explore our helpful links to find what you need.'
+    }
+
+    document.title = pageTitles[path] || pageTitles['/404']
+    
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', pageDescriptions[path] || pageDescriptions['/404'])
+    }
+
+    // Update canonical URL
+    const canonical = document.querySelector('link[rel="canonical"]')
+    if (canonical) {
+      canonical.setAttribute('href', `https://haven-coin.com${path === '/' ? '' : path}`)
     }
   }
 

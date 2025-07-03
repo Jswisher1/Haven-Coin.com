@@ -731,6 +731,30 @@ p {
   color: var(--primary-gold);
 }
 
+.social-links {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--gray-800);
+  border-radius: var(--radius-full);
+  color: var(--gray-400);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--primary-gold);
+  color: var(--primary-dark);
+}
+
 .footer-bottom {
   border-top: 1px solid var(--gray-700);
   padding-top: var(--space-8);
@@ -1358,6 +1382,181 @@ p {
   color: var(--primary-gold);
 }
 
+/* 404 Error Page Styles */
+.error-page {
+  padding: var(--space-24) 0;
+  text-align: center;
+  background: var(--gray-50);
+  min-height: calc(100vh - 160px);
+}
+
+.error-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.error-icon {
+  font-size: 6rem;
+  margin-bottom: var(--space-6);
+}
+
+.error-page h1 {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+  color: var(--text-dark);
+}
+
+.error-message {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  margin-bottom: var(--space-12);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error-suggestions {
+  margin-bottom: var(--space-12);
+}
+
+.error-suggestions h3 {
+  margin-bottom: var(--space-6);
+  color: var(--text-dark);
+}
+
+.suggestion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.suggestion-card {
+  background: var(--white);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.suggestion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.suggestion-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-3);
+}
+
+.suggestion-card h4 {
+  margin-bottom: var(--space-2);
+}
+
+.suggestion-card h4 a {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.suggestion-card h4 a:hover {
+  color: var(--primary-gold);
+}
+
+.suggestion-card p {
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.search-section {
+  margin-bottom: var(--space-12);
+}
+
+.search-section h3 {
+  margin-bottom: var(--space-4);
+  color: var(--text-dark);
+}
+
+.search-form {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-form input {
+  flex: 1;
+  padding: var(--space-3);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: var(--primary-gold);
+}
+
+.contact-help {
+  margin-bottom: var(--space-12);
+}
+
+.contact-help h3 {
+  margin-bottom: var(--space-4);
+  color: var(--text-dark);
+}
+
+.contact-help p {
+  margin-bottom: var(--space-6);
+  color: var(--text-light);
+}
+
+.help-options {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.recent-content h3 {
+  margin-bottom: var(--space-6);
+  color: var(--text-dark);
+}
+
+.recent-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+}
+
+.recent-post {
+  background: var(--white);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.recent-post h4 {
+  margin-bottom: var(--space-2);
+}
+
+.recent-post h4 a {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.recent-post h4 a:hover {
+  color: var(--primary-gold);
+}
+
+.recent-post p {
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
 /* Animation classes */
 .fade-in {
   opacity: 0;
@@ -1469,6 +1668,19 @@ p {
     flex-direction: column;
   }
 
+  .suggestion-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .help-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
   h1 { font-size: 2rem; }
   h2 { font-size: 1.75rem; }
   h3 { font-size: 1.5rem; }
@@ -1508,6 +1720,22 @@ p {
 
   .blog-post-full .post-content {
     font-size: 1rem;
+  }
+
+  .error-page {
+    padding: var(--space-16) 0;
+  }
+
+  .error-icon {
+    font-size: 4rem;
+  }
+
+  .error-page h1 {
+    font-size: 2rem;
+  }
+
+  .suggestion-grid {
+    grid-template-columns: 1fr;
   }
 }
 
