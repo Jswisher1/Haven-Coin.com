@@ -6,14 +6,14 @@ class HavenCoinApp {
   constructor() {
     this.currentPage = 'home'
     this.pages = {
-      '/': () => resourceLoader.loadModule('./pages/home.js'),
-      '/coins': () => resourceLoader.loadModule('./pages/coins.js'),
-      '/jewelry': () => resourceLoader.loadModule('./pages/jewelry.js'),
-      '/services': () => resourceLoader.loadModule('./pages/services.js'),
-      '/about': () => resourceLoader.loadModule('./pages/about.js'),
-      '/contact': () => resourceLoader.loadModule('./pages/contact.js'),
-      '/blog': () => resourceLoader.loadModule('./pages/blog.js'),
-      '/404': () => resourceLoader.loadModule('./pages/404.js')
+      '/': () => resourceLoader.loadModule('../pages/home.js'),
+      '/coins': () => resourceLoader.loadModule('../pages/coins.js'),
+      '/jewelry': () => resourceLoader.loadModule('../pages/jewelry.js'),
+      '/services': () => resourceLoader.loadModule('../pages/services.js'),
+      '/about': () => resourceLoader.loadModule('../pages/about.js'),
+      '/contact': () => resourceLoader.loadModule('../pages/contact.js'),
+      '/blog': () => resourceLoader.loadModule('../pages/blog.js'),
+      '/404': () => resourceLoader.loadModule('../pages/404.js')
     }
     this.init()
   }
