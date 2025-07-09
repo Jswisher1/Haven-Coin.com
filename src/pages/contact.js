@@ -4,123 +4,96 @@ export default class ContactPage {
       <section class="page-hero">
         <div class="container">
           <div class="page-hero-content fade-in">
-            <h1>Contact Us</h1>
-            <p>Visit our New Haven showroom or get in touch today</p>
+            <h1>Visit Our Store</h1>
+            <p>Located in downtown New Haven • Free evaluations • Immediate payment</p>
           </div>
         </div>
       </section>
 
-      <section class="contact-main">
+      <section class="section">
         <div class="container">
-          <div class="contact-grid">
-            <div class="contact-info fade-in">
-              <h3>Store Information</h3>
+          <div class="grid grid-2">
+            <div class="card fade-in">
+              <h3 class="mb-6">Store Information</h3>
               
-              <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div>
-                  <strong>Address</strong><br>
-                  123 Chapel Street<br>
-                  New Haven, CT 06510<br>
-                  <small>Located in the heart of downtown New Haven, near Yale University</small>
-                </div>
+              <div class="mb-6">
+                <h4 class="mb-2">Address</h4>
+                <p class="text-muted">123 Chapel Street<br>New Haven, CT 06510</p>
+                <p class="text-small">Downtown location near Yale University</p>
               </div>
               
-              <div class="contact-item">
-                <div class="contact-icon">📞</div>
-                <div>
-                  <strong>Phone</strong><br>
-                  <a href="tel:+12035550123">(203) 555-0123</a><br>
-                  <small>Call for appointments or questions</small>
-                </div>
+              <div class="mb-6">
+                <h4 class="mb-2">Phone</h4>
+                <p><a href="tel:+12035550123" class="text-accent font-semibold text-large">(203) 555-0123</a></p>
+                <p class="text-small">Call for current prices and appointments</p>
               </div>
               
-              <div class="contact-item">
-                <div class="contact-icon">✉️</div>
-                <div>
-                  <strong>Email</strong><br>
-                  <a href="mailto:info@haven-coin.com">info@haven-coin.com</a><br>
-                  <small>We respond within 24 hours</small>
-                </div>
+              <div class="mb-6">
+                <h4 class="mb-2">Email</h4>
+                <p><a href="mailto:info@haven-coin.com" class="text-accent">info@haven-coin.com</a></p>
+                <p class="text-small">Send photos for preliminary evaluation</p>
               </div>
               
-              <div class="contact-item">
-                <div class="contact-icon">🕒</div>
-                <div>
-                  <strong>Store Hours</strong><br>
+              <div class="mb-6">
+                <h4 class="mb-2">Business Hours</h4>
+                <p class="text-muted">
                   Monday - Friday: 10:00 AM - 6:00 PM<br>
                   Saturday: 10:00 AM - 5:00 PM<br>
-                  Sunday: Closed<br>
-                  <small>Extended hours by appointment</small>
-                </div>
+                  Sunday: Closed
+                </p>
+                <p class="text-small">Extended hours by appointment for large collections</p>
               </div>
 
-              <div class="contact-item">
-                <div class="contact-icon">🚗</div>
-                <div>
-                  <strong>Parking</strong><br>
-                  Street parking available<br>
-                  Chapel Square Mall parking garage<br>
-                  <small>Validated parking for customers</small>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">🏛️</div>
-                <div>
-                  <strong>Nearby Landmarks</strong><br>
-                  Yale University (2 blocks)<br>
-                  New Haven Green (3 blocks)<br>
-                  <small>Easy walking distance from major attractions</small>
-                </div>
+              <div class="mb-6">
+                <h4 class="mb-2">Parking</h4>
+                <p class="text-muted">Street parking available<br>Chapel Square Mall parking garage</p>
+                <p class="text-small">Validated parking for customers</p>
               </div>
             </div>
             
-            <div class="contact-form-container fade-in">
-              <h3>Send Us a Message</h3>
-              <p>Whether you have questions about our inventory, need an appraisal, or want to sell items, we're here to help. Please provide as much detail as possible so we can assist you effectively.</p>
+            <div class="card fade-in">
+              <h3 class="mb-4">Get a Quote</h3>
+              <p class="mb-6 text-muted">Send us details about your items for a preliminary evaluation</p>
               
               <form class="contact-form">
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="name">Full Name *</label>
+                    <label for="name">Name *</label>
                     <input type="text" id="name" name="name" required>
                   </div>
                   
                   <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required>
                   </div>
                 </div>
                 
                 <div class="form-group">
-                  <label for="phone">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" placeholder="(203) 555-0123">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email">
                 </div>
 
                 <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <select id="subject" name="subject">
-                    <option value="">Select a topic</option>
-                    <option value="buying">I want to buy coins/jewelry</option>
-                    <option value="selling">I want to sell items</option>
-                    <option value="appraisal">I need an appraisal</option>
-                    <option value="repair">Jewelry repair service</option>
-                    <option value="custom">Custom jewelry design</option>
-                    <option value="consultation">Investment consultation</option>
-                    <option value="education">Educational services</option>
-                    <option value="other">Other inquiry</option>
+                  <label for="item-type">Item Type</label>
+                  <select id="item-type" name="item-type">
+                    <option value="">Select category</option>
+                    <option value="gold-silver">Gold & Silver Bullion</option>
+                    <option value="coins">Rare Coins</option>
+                    <option value="jewelry">Jewelry & Watches</option>
+                    <option value="currency">Paper Money</option>
+                    <option value="mixed">Mixed Collection</option>
+                    <option value="other">Other Items</option>
                   </select>
                 </div>
                 
                 <div class="form-group">
-                  <label for="message">Message *</label>
-                  <textarea id="message" name="message" placeholder="Please describe what you're looking for, items you'd like to sell, or any questions you have. Include details such as:
+                  <label for="description">Item Description *</label>
+                  <textarea id="description" name="description" placeholder="Please describe your items in detail:
 
-• For buying: What type of items interest you and your budget range
-• For selling: Description of items, approximate age, and any documentation
-• For appraisals: Purpose (insurance, estate, etc.) and number of items
-• For repairs: Description of the issue and timeline needed
+• Type and quantity of items
+• Condition and any markings
+• Approximate age if known
+• Any certificates or documentation
 
 The more details you provide, the better we can assist you." required></textarea>
                 </div>
@@ -128,32 +101,37 @@ The more details you provide, the better we can assist you." required></textarea
                 <div class="form-group">
                   <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-light);">
                     <input type="checkbox" required style="width: auto;">
-                    I agree to be contacted regarding my inquiry and understand that my information will be kept confidential.
+                    I understand this is a preliminary evaluation and final pricing requires in-person inspection.
                   </label>
                 </div>
                 
-                <button type="submit" class="submit-button">Send Message</button>
+                <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send Inquiry</button>
               </form>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" style="background: var(--gray-50);">
+      <section class="section" style="background: var(--surface);">
         <div class="container">
-          <div class="text-center fade-in">
-            <h2>Find Our Store</h2>
-            <p>Conveniently located in downtown New Haven</p>
+          <div class="text-center mb-8 fade-in">
+            <h2>What to Bring</h2>
           </div>
           
-          <div class="service-card fade-in" style="margin-top: 2rem; padding: 3rem; text-align: center;">
-            <div style="font-size: 4rem; margin-bottom: 2rem;">🗺️</div>
-            <h3 style="margin-bottom: 1rem;">Interactive Map Coming Soon</h3>
-            <p style="margin-bottom: 1rem;"><strong>123 Chapel Street, New Haven, CT 06510</strong></p>
-            <p style="margin-bottom: 2rem;">Near the intersection of Chapel and State Streets, in the heart of downtown New Haven</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-              <a href="https://maps.google.com/?q=123+Chapel+Street+New+Haven+CT" target="_blank" class="btn btn-primary">View on Google Maps</a>
-              <a href="https://www.bing.com/maps?q=123+Chapel+Street+New+Haven+CT" target="_blank" class="btn btn-secondary">View on Bing Maps</a>
+          <div class="grid grid-3">
+            <div class="card card-compact fade-in">
+              <h4 class="mb-2">Required</h4>
+              <p class="text-small">Valid government-issued photo ID for all transactions</p>
+            </div>
+
+            <div class="card card-compact fade-in">
+              <h4 class="mb-2">Helpful</h4>
+              <p class="text-small">Original boxes, certificates, receipts, or previous appraisals</p>
+            </div>
+
+            <div class="card card-compact fade-in">
+              <h4 class="mb-2">Large Collections</h4>
+              <p class="text-small">Call ahead to schedule appointment and ensure adequate time</p>
             </div>
           </div>
         </div>
@@ -161,77 +139,37 @@ The more details you provide, the better we can assist you." required></textarea
 
       <section class="section">
         <div class="container">
-          <div class="text-center fade-in">
-            <h2>Getting Here</h2>
-            <p>Multiple convenient ways to reach our store</p>
+          <div class="text-center mb-8 fade-in">
+            <h2>Directions</h2>
           </div>
           
-          <div class="services-grid">
-            <div class="service-card fade-in">
-              <div class="service-icon">🚗</div>
-              <h3>By Car</h3>
-              <p><strong>From I-95 North:</strong> Take Exit 47 (Hamilton Street). Follow signs to downtown New Haven. Turn right on Chapel Street.</p>
-              <p><strong>From I-95 South:</strong> Take Exit 47 (Hamilton Street). Follow signs to downtown New Haven. Turn right on Chapel Street.</p>
-              <p><strong>From I-91:</strong> Take Exit 3 (Trumbull Street). Head east toward downtown. Turn left on Chapel Street.</p>
-              <p><strong>Parking:</strong> Street parking available. Chapel Square Mall parking garage offers validated parking for customers.</p>
+          <div class="grid grid-2">
+            <div class="card fade-in">
+              <h4 class="mb-4">From I-95</h4>
+              <p class="text-small mb-2"><strong>North or South:</strong> Take Exit 47 (Hamilton Street)</p>
+              <p class="text-small mb-2">Follow signs to downtown New Haven</p>
+              <p class="text-small">Turn right on Chapel Street - we're on the right</p>
             </div>
 
-            <div class="service-card fade-in">
-              <div class="service-icon">🚌</div>
-              <h3>Public Transportation</h3>
-              <p><strong>CT Transit:</strong> Multiple bus routes serve Chapel Street, including Routes 215, 224, 228, and 231.</p>
-              <p><strong>Metro-North:</strong> New Haven Union Station is 0.5 miles away. Take a taxi or bus to Chapel Street.</p>
-              <p><strong>Amtrak:</strong> New Haven Station connects to major Northeast cities including New York, Boston, and Washington DC.</p>
-              <p><strong>Shore Line East:</strong> Commuter rail service connecting New Haven to eastern Connecticut towns.</p>
+            <div class="card fade-in">
+              <h4 class="mb-4">From I-91</h4>
+              <p class="text-small mb-2"><strong>North or South:</strong> Take Exit 3 (Trumbull Street)</p>
+              <p class="text-small mb-2">Head east toward downtown</p>
+              <p class="text-small">Turn left on Chapel Street - we're on the left</p>
             </div>
 
-            <div class="service-card fade-in">
-              <div class="service-icon">🚶</div>
-              <h3>Walking & Accessibility</h3>
-              <p><strong>From Yale University:</strong> 5-minute walk from Yale campus. Head south on College Street to Chapel Street.</p>
-              <p><strong>From New Haven Green:</strong> 3-minute walk. Head west on Chapel Street.</p>
-              <p><strong>Downtown Hotels:</strong> Walking distance from most downtown hotels and accommodations.</p>
-              <p><strong>Accessibility:</strong> Street-level entrance, wheelchair accessible, and ADA compliant facilities.</p>
+            <div class="card fade-in">
+              <h4 class="mb-4">Public Transportation</h4>
+              <p class="text-small mb-2"><strong>Metro-North:</strong> New Haven Union Station (0.5 miles)</p>
+              <p class="text-small mb-2"><strong>CT Transit:</strong> Multiple bus routes serve Chapel Street</p>
+              <p class="text-small"><strong>Amtrak:</strong> New Haven Station connects major Northeast cities</p>
             </div>
 
-            <div class="service-card fade-in">
-              <div class="service-icon">🏨</div>
-              <h3>Nearby Amenities</h3>
-              <p><strong>Dining:</strong> Numerous restaurants and cafes within walking distance for lunch or dinner.</p>
-              <p><strong>Shopping:</strong> Chapel Street shopping district with boutiques and specialty stores.</p>
-              <p><strong>Hotels:</strong> Several hotels nearby including Omni New Haven, Graduate New Haven, and Study at Yale.</p>
-              <p><strong>Attractions:</strong> Yale University Art Gallery, Peabody Museum, and Shubert Theatre all nearby.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" style="background: var(--gray-50);">
-        <div class="container">
-          <div class="text-center fade-in">
-            <h2>Frequently Asked Questions</h2>
-            <p>Common questions about visiting our store and services</p>
-          </div>
-          
-          <div class="services-grid">
-            <div class="service-card fade-in">
-              <h4>Do I need an appointment?</h4>
-              <p>Walk-ins are welcome during business hours. However, we recommend calling ahead for appraisals, custom design consultations, or if you're bringing a large collection for evaluation.</p>
-            </div>
-
-            <div class="service-card fade-in">
-              <h4>What should I bring when selling items?</h4>
-              <p>Bring the items you wish to sell along with any documentation you have (certificates, receipts, previous appraisals). Also bring a valid photo ID for our records.</p>
-            </div>
-
-            <div class="service-card fade-in">
-              <h4>Do you offer free evaluations?</h4>
-              <p>Yes, we provide free preliminary evaluations for items you're considering selling. Formal written appraisals for insurance or legal purposes have associated fees.</p>
-            </div>
-
-            <div class="service-card fade-in">
-              <h4>What payment methods do you accept?</h4>
-              <p>We accept cash, all major credit cards, personal checks (with proper ID), and bank transfers for larger transactions. We can also arrange financing for qualified purchases.</p>
+            <div class="card fade-in">
+              <h4 class="mb-4">Nearby Landmarks</h4>
+              <p class="text-small mb-2"><strong>Yale University:</strong> 2 blocks north</p>
+              <p class="text-small mb-2"><strong>New Haven Green:</strong> 3 blocks east</p>
+              <p class="text-small">Easy walking distance from downtown hotels</p>
             </div>
           </div>
         </div>
@@ -240,11 +178,14 @@ The more details you provide, the better we can assist you." required></textarea
       <section class="cta-section">
         <div class="container">
           <div class="cta-content fade-in">
-            <h2>Ready to Visit?</h2>
-            <p>We look forward to meeting you and helping with all your coin and jewelry needs</p>
+            <h2>Ready to Sell?</h2>
+            <p>Visit us today for expert evaluation and immediate payment</p>
             <div class="cta-buttons">
-              <a href="tel:+12035550123" class="btn btn-primary">Call (203) 555-0123</a>
-              <a href="mailto:info@haven-coin.com" class="btn btn-secondary">Email Us</a>
+              <a href="tel:+12035550123" class="btn btn-primary btn-large">Call (203) 555-0123</a>
+              <a href="mailto:info@haven-coin.com" class="btn btn-secondary btn-large">Email Us</a>
+            </div>
+            <div style="margin-top: 2rem; font-size: 0.875rem; opacity: 0.8;">
+              <p>No appointment necessary • Free evaluations • Immediate cash payment</p>
             </div>
           </div>
         </div>
