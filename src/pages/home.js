@@ -110,13 +110,13 @@ export default class HomePage {
                   <li style="margin-bottom: 0.5rem; color: var(--text-light);">✓ Custom engagement rings and wedding jewelry</li>
                   <li style="margin-bottom: 0.5rem; color: var(--text-light);">✓ Estate and vintage jewelry restoration</li>
                   <li style="margin-bottom: 0.5rem; color: var(--text-light);">✓ Precious metals investment and trading</li>
-                  <li style="margin-bottom: 0.5rem; color: var(--text-light);">✓ Professional appraisals for all purposes</li>
+                <h4><a href="/what-we-buy/coins" data-route="/what-we-buy/coins">Rare Coins</a></h4>
                 </ul>
               </div>
               
               <a href="/about" class="btn btn-outline" data-route="/about">Learn More About Us</a>
             </div>
-            <div class="about-image fade-in">
+                <h4><a href="/what-we-buy/jewelry" data-route="/what-we-buy/jewelry">Fine Jewelry</a></h4>
               <img src="https://images.pexels.com/photos/1232594/pexels-photo-1232594.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Haven Coin & Jewelry store interior">
             </div>
           </div>

@@ -7,8 +7,11 @@ class HavenCoinApp {
     this.currentPage = 'home'
     this.pages = {
       '/': () => resourceLoader.loadModule('../pages/home.js'),
-      '/coins': () => resourceLoader.loadModule('../pages/coins.js'),
-      '/jewelry': () => resourceLoader.loadModule('../pages/jewelry.js'),
+      '/what-we-buy': () => resourceLoader.loadModule('../pages/what-we-buy.js'),
+      '/what-we-buy/coins': () => resourceLoader.loadModule('../pages/coins.js'),
+      '/what-we-buy/jewelry': () => resourceLoader.loadModule('../pages/jewelry.js'),
+      '/what-we-buy/bullion': () => resourceLoader.loadModule('../pages/bullion.js'),
+      '/what-we-buy/currency': () => resourceLoader.loadModule('../pages/currency.js'),
       '/services': () => resourceLoader.loadModule('../pages/services.js'),
       '/about': () => resourceLoader.loadModule('../pages/about.js'),
       '/contact': () => resourceLoader.loadModule('../pages/contact.js'),
@@ -307,8 +310,17 @@ class HavenCoinApp {
             
             <ul class="nav-menu">
               <li><a href="/" class="nav-link" data-route="/">Home</a></li>
-              <li><a href="/coins" class="nav-link" data-route="/coins">Coins</a></li>
-              <li><a href="/jewelry" class="nav-link" data-route="/jewelry">Jewelry</a></li>
+              <li class="nav-dropdown">
+                <a href="/what-we-buy" class="nav-link dropdown-toggle" data-route="/what-we-buy">
+                  What We Buy <span class="dropdown-arrow">▼</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/what-we-buy/coins" class="dropdown-link" data-route="/what-we-buy/coins">Coins & Collectibles</a></li>
+                  <li><a href="/what-we-buy/jewelry" class="dropdown-link" data-route="/what-we-buy/jewelry">Jewelry & Watches</a></li>
+                  <li><a href="/what-we-buy/bullion" class="dropdown-link" data-route="/what-we-buy/bullion">Bullion & Precious Metals</a></li>
+                  <li><a href="/what-we-buy/currency" class="dropdown-link" data-route="/what-we-buy/currency">Currency & Paper Money</a></li>
+                </ul>
+              </li>
               <li><a href="/services" class="nav-link" data-route="/services">Services</a></li>
               <li><a href="/about" class="nav-link" data-route="/about">About</a></li>
               <li><a href="/contact" class="nav-link" data-route="/contact">Contact</a></li>
@@ -354,8 +366,11 @@ class HavenCoinApp {
               <h3>Quick Links</h3>
               <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/coins">Coins</a></li>
-                <li><a href="/jewelry">Jewelry</a></li>
+                <li><a href="/what-we-buy">What We Buy</a></li>
+                <li><a href="/what-we-buy/coins">Coins & Collectibles</a></li>
+                <li><a href="/what-we-buy/jewelry">Jewelry & Watches</a></li>
+                <li><a href="/what-we-buy/bullion">Bullion & Precious Metals</a></li>
+                <li><a href="/what-we-buy/currency">Currency & Paper Money</a></li>
                 <li><a href="/services">Services</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
@@ -429,7 +444,7 @@ class HavenCoinApp {
 
       // Close menu when clicking on a link
       navMenu.addEventListener('click', (e) => {
-        if (e.target.classList.contains('nav-link')) {
+        if (e.target.classList.contains('nav-link') || e.target.classList.contains('dropdown-link')) {
           navMenu.classList.remove('active')
           mobileToggle.classList.remove('active')
           document.body.classList.remove('menu-open')
@@ -442,9 +457,49 @@ class HavenCoinApp {
           navMenu.classList.remove('active')
           mobileToggle.classList.remove('active')
           document.body.classList.remove('menu-open')
+          // Close any open dropdowns
+          document.querySelectorAll('.dropdown-menu').forEach(dropdown => {
+            dropdown.classList.remove('active')
+          })
         }
       })
     }
+
+    // Setup dropdown functionality
+    this.setupDropdowns()
+  }
+
+  setupDropdowns() {
+    const dropdowns = document.querySelectorAll('.nav-dropdown')
+    
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle')
+      const menu = dropdown.querySelector('.dropdown-menu')
+      
+      if (toggle && menu) {
+        // Desktop hover behavior
+        dropdown.addEventListener('mouseenter', () => {
+          if (window.innerWidth > 768) {
+            menu.classList.add('active')
+          }
+        })
+        
+        dropdown.addEventListener('mouseleave', () => {
+          if (window.innerWidth > 768) {
+            menu.classList.remove('active')
+          }
+        })
+        
+        // Mobile click behavior
+        toggle.addEventListener('click', (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault()
+            menu.classList.toggle('active')
+            toggle.classList.toggle('active')
+          }
+        })
+      }
+    })
   }
 
   setupScrollEffects() {
