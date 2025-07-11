@@ -370,9 +370,18 @@ class HavenCoinApp {
               <a href="tel:+12035550123" class="phone-number">📞 (203) 555-0123</a>
               <span class="address">📍 123 Chapel Street, New Haven, CT</span>
             </div>
+            <div class="social-links">
+              <a href="https://www.facebook.com/havencoinjewelry" aria-label="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
+              <a href="https://www.instagram.com/havencoinjewelry" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
+              <a href="https://twitter.com/havencoinjewelry" aria-label="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
+            </div>
           </div>
           
           <div class="header-main">
+            <div class="logo">
+              <a href="/" data-route="/">Haven Coin & Jewelry</a>
+            </div>
+            
             <nav class="nav-menu">
               <a href="/" data-route="/" class="nav-link">Home</a>
               <div class="nav-dropdown">
@@ -563,7 +572,6 @@ class HavenCoinApp {
 
   setupScrollEffects() {
     const header = document.querySelector('.header')
-    let lastScrollY = window.scrollY
     let scrollTimeout
 
     // Throttle scroll events for better performance
@@ -578,14 +586,6 @@ class HavenCoinApp {
           header.classList.remove('scrolled')
         }
 
-        // Hide/show header on scroll
-        if (currentScrollY > lastScrollY && currentScrollY > 200) {
-          header.classList.add('hidden')
-        } else {
-          header.classList.remove('hidden')
-        }
-
-        lastScrollY = currentScrollY
         scrollTimeout = null
       }, 16) // ~60fps
     }, { passive: true })
