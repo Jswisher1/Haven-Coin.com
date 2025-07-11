@@ -632,7 +632,7 @@ p {
 
 /* Main content */
 .main-content {
-  margin-top: 98px; /* Adjusted for ticker height */
+  margin-top: 98px; /* Header + ticker height */
   min-height: calc(100vh - 64px);
 }
 
@@ -1412,7 +1412,8 @@ p {
 
   .price-ticker {
     font-size: 11px;
-    padding: 6px 0;
+    padding: 8px 0;
+    height: 30px;
   }
   
   .ticker-item {
@@ -1435,7 +1436,7 @@ p {
   }
   
   .main-content {
-    margin-top: 88px; /* Adjusted for smaller ticker */
+    margin-top: 94px; /* Adjusted for smaller ticker */
   }
 
   .mobile-menu-toggle {
