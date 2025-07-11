@@ -363,6 +363,72 @@ class HavenCoinApp {
         </div>
       </div>
 
+      <div class="price-ticker">
+        <div class="ticker-content">
+          <div class="ticker-item">
+            <span class="ticker-label">GOLD</span>
+            <span class="ticker-price">$2,045.50</span>
+            <span class="ticker-change positive">+$12.30 (+0.6%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">SILVER</span>
+            <span class="ticker-price">$24.85</span>
+            <span class="ticker-change positive">+$0.18 (+0.7%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">PLATINUM</span>
+            <span class="ticker-price">$1,025.30</span>
+            <span class="ticker-change negative">-$3.20 (-0.3%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">PALLADIUM</span>
+            <span class="ticker-price">$1,846.75</span>
+            <span class="ticker-change positive">+$22.15 (+1.2%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">USD/EUR</span>
+            <span class="ticker-price">1.0842</span>
+            <span class="ticker-change negative">-0.0023 (-0.2%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">DXY</span>
+            <span class="ticker-price">103.45</span>
+            <span class="ticker-change positive">+0.15 (+0.1%)</span>
+          </div>
+          <!-- Duplicate content for seamless loop -->
+          <div class="ticker-item">
+            <span class="ticker-label">GOLD</span>
+            <span class="ticker-price">$2,045.50</span>
+            <span class="ticker-change positive">+$12.30 (+0.6%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">SILVER</span>
+            <span class="ticker-price">$24.85</span>
+            <span class="ticker-change positive">+$0.18 (+0.7%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">PLATINUM</span>
+            <span class="ticker-price">$1,025.30</span>
+            <span class="ticker-change negative">-$3.20 (-0.3%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">PALLADIUM</span>
+            <span class="ticker-price">$1,846.75</span>
+            <span class="ticker-change positive">+$22.15 (+1.2%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">USD/EUR</span>
+            <span class="ticker-price">1.0842</span>
+            <span class="ticker-change negative">-0.0023 (-0.2%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">DXY</span>
+            <span class="ticker-price">103.45</span>
+            <span class="ticker-change positive">+0.15 (+0.1%)</span>
+          </div>
+        </div>
+      </div>
+
       <header class="header">
         <div class="container">
           <nav class="nav">
