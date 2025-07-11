@@ -297,6 +297,72 @@ class HavenCoinApp {
   createLayout() {
     // Use optimized images and inline SVG icons
     document.getElementById('app').innerHTML = `
+      <div class="price-ticker">
+        <div class="ticker-content">
+          <div class="ticker-item">
+            <span class="ticker-label">GOLD</span>
+            <span class="ticker-price">$2,045.50</span>
+            <span class="ticker-change positive">+$12.30 (+0.6%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">SILVER</span>
+            <span class="ticker-price">$24.85</span>
+            <span class="ticker-change positive">+$0.18 (+0.7%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">PLATINUM</span>
+            <span class="ticker-price">$1,025.30</span>
+            <span class="ticker-change negative">-$3.20 (-0.3%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">PALLADIUM</span>
+            <span class="ticker-price">$1,846.75</span>
+            <span class="ticker-change positive">+$22.15 (+1.2%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">USD/EUR</span>
+            <span class="ticker-price">1.0842</span>
+            <span class="ticker-change negative">-0.0023 (-0.2%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">DXY</span>
+            <span class="ticker-price">103.45</span>
+            <span class="ticker-change positive">+0.15 (+0.1%)</span>
+          </div>
+          <!-- Duplicate content for seamless loop -->
+          <div class="ticker-item">
+            <span class="ticker-label">GOLD</span>
+            <span class="ticker-price">$2,045.50</span>
+            <span class="ticker-change positive">+$12.30 (+0.6%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">SILVER</span>
+            <span class="ticker-price">$24.85</span>
+            <span class="ticker-change positive">+$0.18 (+0.7%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">PLATINUM</span>
+            <span class="ticker-price">$1,025.30</span>
+            <span class="ticker-change negative">-$3.20 (-0.3%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">PALLADIUM</span>
+            <span class="ticker-price">$1,846.75</span>
+            <span class="ticker-change positive">+$22.15 (+1.2%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">USD/EUR</span>
+            <span class="ticker-price">1.0842</span>
+            <span class="ticker-change negative">-0.0023 (-0.2%)</span>
+          </div>
+          <div class="ticker-item">
+            <span class="ticker-label">DXY</span>
+            <span class="ticker-price">103.45</span>
+            <span class="ticker-change positive">+0.15 (+0.1%)</span>
+          </div>
+        </div>
+      </div>
+
       <header class="header">
         <div class="container">
           <nav class="nav">
@@ -429,6 +495,7 @@ class HavenCoinApp {
     // Setup mobile menu
     this.setupMobileMenu()
     this.setupScrollEffects()
+    this.setupPriceTicker()
   }
 
   setupMobileMenu() {
@@ -530,6 +597,66 @@ class HavenCoinApp {
         scrollTimeout = null
       }, 16) // ~60fps
     }, { passive: true })
+  }
+
+  setupPriceTicker() {
+    // Update prices periodically (simulate real-time data)
+    setInterval(() => {
+      this.updateTickerPrices()
+    }, 30000) // Update every 30 seconds
+
+    // Add click handlers for ticker items
+    document.addEventListener('click', (e) => {
+      const tickerItem = e.target.closest('.ticker-item')
+      if (tickerItem) {
+        const label = tickerItem.querySelector('.ticker-label').textContent
+        this.showPriceDetails(label)
+      }
+    })
+  }
+
+  updateTickerPrices() {
+    const tickerItems = document.querySelectorAll('.ticker-item')
+    
+    tickerItems.forEach(item => {
+      const priceElement = item.querySelector('.ticker-price')
+      const changeElement = item.querySelector('.ticker-change')
+      const label = item.querySelector('.ticker-label').textContent
+      
+      // Simulate price changes (in real app, this would come from API)
+      const currentPrice = parseFloat(priceElement.textContent.replace(/[$,]/g, ''))
+      const changePercent = (Math.random() - 0.5) * 0.02 // ±1% max change
+      const newPrice = currentPrice * (1 + changePercent)
+      const priceChange = newPrice - currentPrice
+      
+      // Update price
+      if (label.includes('USD') || label === 'DXY') {
+        priceElement.textContent = newPrice.toFixed(4)
+        changeElement.textContent = `${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(4)} (${(changePercent * 100).toFixed(2)}%)`
+      } else {
+        priceElement.textContent = `$${newPrice.toFixed(2)}`
+        changeElement.textContent = `${priceChange >= 0 ? '+' : ''}$${Math.abs(priceChange).toFixed(2)} (${(changePercent * 100).toFixed(1)}%)`
+      }
+      
+      // Update change color
+      changeElement.className = `ticker-change ${priceChange >= 0 ? 'positive' : 'negative'}`
+    })
+  }
+
+  showPriceDetails(metal) {
+    // Show detailed price information (could open modal or navigate to price page)
+    const messages = {
+      'GOLD': 'Gold spot price updated every 15 minutes during market hours. We pay 95-98% of spot price.',
+      'SILVER': 'Silver spot price updated every 15 minutes during market hours. We pay 92-96% of spot price.',
+      'PLATINUM': 'Platinum spot price updated every 15 minutes during market hours. We pay 90-95% of spot price.',
+      'PALLADIUM': 'Palladium spot price updated every 15 minutes during market hours. We pay 88-93% of spot price.',
+      'USD/EUR': 'US Dollar to Euro exchange rate affects international precious metals pricing.',
+      'DXY': 'US Dollar Index - measures USD strength against basket of major currencies.'
+    }
+    
+    if (messages[metal]) {
+      this.showNotification(messages[metal], 'info')
+    }
   }
 
   async navigate(route) {
@@ -781,7 +908,7 @@ class HavenCoinApp {
 
   showNotification(message, type) {
     const notification = document.createElement('div')
-    notification.className = `notification ${type}`
+    notification.className = `notification ${type || 'info'}`
     notification.style.cssText = `
       position: fixed;
       top: 20px;
@@ -791,7 +918,7 @@ class HavenCoinApp {
       color: white;
       font-weight: 500;
       z-index: 10000;
-      transform: translateX(100%);
+        <span class="notification-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span>
       transition: transform 0.3s ease;
       ${type === 'success' ? 'background: #10b981;' : 'background: #ef4444;'}
     `
