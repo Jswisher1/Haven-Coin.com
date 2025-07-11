@@ -363,8 +363,65 @@ class HavenCoinApp {
         </div>
       </div>
 
-
       <header class="header">
+        <div class="header-container">
+          <div class="header-top">
+            <div class="contact-info">
+              <a href="tel:+12035550123" class="phone-number">📞 (203) 555-0123</a>
+              <span class="address">📍 123 Chapel Street, New Haven, CT</span>
+            </div>
+            <div class="social-links">
+              <a href="https://www.facebook.com/havencoinjewelry" aria-label="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
+              <a href="https://www.instagram.com/havencoinjewelry" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
+              <a href="https://twitter.com/havencoinjewelry" aria-label="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
+            </div>
+          </div>
+          
+          <div class="header-main">
+            <div class="logo">
+              <a href="/" data-route="/">Haven Coin & Jewelry</a>
+            </div>
+            
+            <nav class="nav-menu">
+              <a href="/" data-route="/" class="nav-link">Home</a>
+              <div class="nav-dropdown">
+                <a href="/what-we-buy" data-route="/what-we-buy" class="nav-link dropdown-toggle">What We Buy</a>
+                <div class="dropdown-menu">
+                  <a href="/what-we-buy/coins" data-route="/what-we-buy/coins" class="dropdown-link">Coins & Collectibles</a>
+                  <a href="/what-we-buy/jewelry" data-route="/what-we-buy/jewelry" class="dropdown-link">Jewelry & Watches</a>
+                  <a href="/what-we-buy/bullion" data-route="/what-we-buy/bullion" class="dropdown-link">Bullion & Precious Metals</a>
+                  <a href="/what-we-buy/currency" data-route="/what-we-buy/currency" class="dropdown-link">Currency & Paper Money</a>
+                </div>
+              </div>
+              <a href="/services" data-route="/services" class="nav-link">Services</a>
+              <a href="/about" data-route="/about" class="nav-link">About</a>
+              <a href="/contact" data-route="/contact" class="nav-link">Contact</a>
+              <a href="/blog" data-route="/blog" class="nav-link">Blog</a>
+            </nav>
+            
+            <button class="mobile-menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main-content" class="main-content">
+        <!-- Page content will be loaded here -->
+      </main>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h3>Contact Information</h3>
+              <div class="contact-info">
+                <p>📍 123 Chapel Street<br>New Haven, CT 06510</p>
+                <p>📞 <a href="tel:+12035550123">(203) 555-0123</a></p>
+                <p>✉️ <a href="mailto:info@haven-coin.com">info@haven-coin.com</a></p>
+              </div>
               <div class="social-links">
                 <a href="https://www.facebook.com/havencoinjewelry" aria-label="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
                 <a href="https://www.instagram.com/havencoinjewelry" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
