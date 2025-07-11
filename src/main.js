@@ -440,6 +440,11 @@ class HavenCoinApp {
               <span class="logo-text">Haven Coin & Jewelry</span>
             </a>
             
+            <a href="tel:+12035550123" class="header-phone">
+              <span class="header-phone-icon">📞</span>
+              (203) 555-0123
+            </a>
+            
             <ul class="nav-menu">
               <li><a href="/" class="nav-link" data-route="/">Home</a></li>
               <li class="nav-dropdown">
