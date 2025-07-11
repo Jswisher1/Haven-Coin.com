@@ -443,7 +443,7 @@ p {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   position: fixed;
-  top: 0;
+  top: 34px;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -632,7 +632,7 @@ p {
 
 /* Main content */
 .main-content {
-  margin-top: 98px; /* Header + ticker height */
+  margin-top: 132px; /* Ticker (34px) + Header (~98px) */
   min-height: calc(100vh - 64px);
 }
 
@@ -1416,6 +1416,10 @@ p {
     height: 30px;
   }
   
+  .header {
+    top: 30px;
+  }
+  
   .ticker-item {
     gap: 6px;
   }
@@ -1436,7 +1440,7 @@ p {
   }
   
   .main-content {
-    margin-top: 94px; /* Adjusted for smaller ticker */
+    margin-top: 124px; /* Mobile ticker (30px) + header (~94px) */
   }
 
   .mobile-menu-toggle {
