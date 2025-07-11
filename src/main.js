@@ -363,135 +363,8 @@ class HavenCoinApp {
         </div>
       </div>
 
-      <div class="price-ticker">
-        <div class="ticker-content">
-          <div class="ticker-item">
-            <span class="ticker-label">GOLD</span>
-            <span class="ticker-price">$2,045.50</span>
-            <span class="ticker-change positive">+$12.30 (+0.6%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">SILVER</span>
-            <span class="ticker-price">$24.85</span>
-            <span class="ticker-change positive">+$0.18 (+0.7%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">PLATINUM</span>
-            <span class="ticker-price">$1,025.30</span>
-            <span class="ticker-change negative">-$3.20 (-0.3%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">PALLADIUM</span>
-            <span class="ticker-price">$1,846.75</span>
-            <span class="ticker-change positive">+$22.15 (+1.2%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">USD/EUR</span>
-            <span class="ticker-price">1.0842</span>
-            <span class="ticker-change negative">-0.0023 (-0.2%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">DXY</span>
-            <span class="ticker-price">103.45</span>
-            <span class="ticker-change positive">+0.15 (+0.1%)</span>
-          </div>
-          <!-- Duplicate content for seamless loop -->
-          <div class="ticker-item">
-            <span class="ticker-label">GOLD</span>
-            <span class="ticker-price">$2,045.50</span>
-            <span class="ticker-change positive">+$12.30 (+0.6%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">SILVER</span>
-            <span class="ticker-price">$24.85</span>
-            <span class="ticker-change positive">+$0.18 (+0.7%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">PLATINUM</span>
-            <span class="ticker-price">$1,025.30</span>
-            <span class="ticker-change negative">-$3.20 (-0.3%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">PALLADIUM</span>
-            <span class="ticker-price">$1,846.75</span>
-            <span class="ticker-change positive">+$22.15 (+1.2%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">USD/EUR</span>
-            <span class="ticker-price">1.0842</span>
-            <span class="ticker-change negative">-0.0023 (-0.2%)</span>
-          </div>
-          <div class="ticker-item">
-            <span class="ticker-label">DXY</span>
-            <span class="ticker-price">103.45</span>
-            <span class="ticker-change positive">+0.15 (+0.1%)</span>
-          </div>
-        </div>
-      </div>
 
       <header class="header">
-        <div class="container">
-          <nav class="nav">
-            <a href="/" class="logo">
-              <svg class="logo-icon" width="32" height="32" viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="50" r="40" fill="#D4AF37"/>
-                <text x="50" y="60" text-anchor="middle" font-size="30" fill="#fff">💰</text>
-              </svg>
-              <span class="logo-text">Haven Coin & Jewelry</span>
-            </a>
-            
-            <a href="tel:+12035550123" class="header-phone">
-              <span class="header-phone-icon">📞</span>
-              (203) 555-0123
-            </a>
-            
-            <ul class="nav-menu">
-              <li><a href="/" class="nav-link" data-route="/">Home</a></li>
-              <li class="nav-dropdown">
-                <a href="/what-we-buy" class="nav-link dropdown-toggle" data-route="/what-we-buy">
-                  What We Buy <span class="dropdown-arrow">▼</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/what-we-buy/coins" class="dropdown-link" data-route="/what-we-buy/coins">Coins & Collectibles</a></li>
-                  <li><a href="/what-we-buy/jewelry" class="dropdown-link" data-route="/what-we-buy/jewelry">Jewelry & Watches</a></li>
-                  <li><a href="/what-we-buy/bullion" class="dropdown-link" data-route="/what-we-buy/bullion">Bullion & Precious Metals</a></li>
-                  <li><a href="/what-we-buy/currency" class="dropdown-link" data-route="/what-we-buy/currency">Currency & Paper Money</a></li>
-                </ul>
-              </li>
-              <li><a href="/services" class="nav-link" data-route="/services">Services</a></li>
-              <li><a href="/about" class="nav-link" data-route="/about">About</a></li>
-              <li><a href="/contact" class="nav-link" data-route="/contact">Contact</a></li>
-              <li><a href="/blog" class="nav-link" data-route="/blog">Blog</a></li>
-            </ul>
-            
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </nav>
-        </div>
-      </header>
-
-      <main id="main-content" class="main-content">
-        <div class="loading-container">
-          <div class="loading-spinner"></div>
-          <p>Loading...</p>
-        </div>
-      </main>
-
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-section">
-              <div class="footer-logo">
-                <svg class="logo-icon" width="24" height="24" viewBox="0 0 100 100" fill="none">
-                  <circle cx="50" cy="50" r="40" fill="#D4AF37"/>
-                  <text x="50" y="60" text-anchor="middle" font-size="30" fill="#fff">💰</text>
-                </svg>
-                <span class="logo-text">Haven Coin & Jewelry</span>
-              </div>
-              <p>New Haven's premier destination for rare coins, precious metals, and fine jewelry since 2003.</p>
               <div class="social-links">
                 <a href="https://www.facebook.com/havencoinjewelry" aria-label="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
                 <a href="https://www.instagram.com/havencoinjewelry" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
@@ -725,8 +598,9 @@ class HavenCoinApp {
       'DXY': 'US Dollar Index - measures USD strength against basket of major currencies.'
     }
     
+    // Remove popup notifications - just log for now
     if (messages[metal]) {
-      this.showNotification(messages[metal], 'info')
+      console.log(`${metal}: ${messages[metal]}`)
     }
   }
 
