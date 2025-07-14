@@ -442,20 +442,8 @@ p {
 .header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  position: fixed;
-  top: 34px;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: var(--transition);
-}
-
-.header.scrolled {
-  box-shadow: var(--shadow-md);
-}
-
-.header.hidden {
-  transform: translateY(-100%);
+  position: relative;
+  width: 100%;
 }
 
 .nav {
@@ -632,7 +620,6 @@ p {
 
 /* Main content */
 .main-content {
-  margin-top: 132px; /* Ticker (34px) + Header (~98px) */
   min-height: calc(100vh - 64px);
 }
 

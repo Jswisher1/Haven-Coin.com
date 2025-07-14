@@ -571,24 +571,7 @@ class HavenCoinApp {
   }
 
   setupScrollEffects() {
-    const header = document.querySelector('.header')
-    let scrollTimeout
-
-    // Throttle scroll events for better performance
-    window.addEventListener('scroll', () => {
-      if (scrollTimeout) return
-      scrollTimeout = setTimeout(() => {
-        const currentScrollY = window.scrollY
-        
-        if (currentScrollY > 100) {
-          header.classList.add('scrolled')
-        } else {
-          header.classList.remove('scrolled')
-        }
-
-        scrollTimeout = null
-      }, 16) // ~60fps
-    }, { passive: true })
+    // Header scroll effects removed - header now scrolls with page
   }
 
   setupPriceTicker() {
