@@ -2,21 +2,25 @@ import './style.css'
 import { resourceLoader } from './utils/resourceLoader.js'
 import { imageOptimizer } from './utils/imageOptimizer.js'
 
+// Force cache busting
+const timestamp = Date.now();
+console.log('Haven Coin & Jewelry App Loading - Version:', timestamp);
+
 class HavenCoinApp {
   constructor() {
     this.currentPage = 'home'
     this.pages = {
-      '/': () => resourceLoader.loadModule('../pages/home.js'),
-      '/what-we-buy': () => resourceLoader.loadModule('../pages/what-we-buy.js'),
-      '/what-we-buy/coins': () => resourceLoader.loadModule('../pages/coins.js'),
-      '/what-we-buy/jewelry': () => resourceLoader.loadModule('../pages/jewelry.js'),
-      '/what-we-buy/bullion': () => resourceLoader.loadModule('../pages/bullion.js'),
-      '/what-we-buy/currency': () => resourceLoader.loadModule('../pages/currency.js'),
-      '/services': () => resourceLoader.loadModule('../pages/services.js'),
-      '/about': () => resourceLoader.loadModule('../pages/about.js'),
-      '/contact': () => resourceLoader.loadModule('../pages/contact.js'),
-      '/blog': () => resourceLoader.loadModule('../pages/blog.js'),
-      '/404': () => resourceLoader.loadModule('../pages/404.js')
+      '/': () => resourceLoader.loadModule(`./pages/home.js?v=${timestamp}`),
+      '/what-we-buy': () => resourceLoader.loadModule(`./pages/what-we-buy.js?v=${timestamp}`),
+      '/what-we-buy/coins': () => resourceLoader.loadModule(`./pages/coins.js?v=${timestamp}`),
+      '/what-we-buy/jewelry': () => resourceLoader.loadModule(`./pages/jewelry.js?v=${timestamp}`),
+      '/what-we-buy/bullion': () => resourceLoader.loadModule(`./pages/bullion.js?v=${timestamp}`),
+      '/what-we-buy/currency': () => resourceLoader.loadModule(`./pages/currency.js?v=${timestamp}`),
+      '/services': () => resourceLoader.loadModule(`./pages/services.js?v=${timestamp}`),
+      '/about': () => resourceLoader.loadModule(`./pages/about.js?v=${timestamp}`),
+      '/contact': () => resourceLoader.loadModule(`./pages/contact.js?v=${timestamp}`),
+      '/blog': () => resourceLoader.loadModule(`./pages/blog.js?v=${timestamp}`),
+      '/404': () => resourceLoader.loadModule(`./pages/404.js?v=${timestamp}`)
     }
     this.init()
   }

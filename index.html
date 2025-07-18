@@ -329,6 +329,22 @@
     // Mark that JavaScript is loading
     document.documentElement.classList.add('js-loading');
     
+    // Clear any cached modules
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+    
+    // Clear localStorage cache
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith('api_') || key.startsWith('cache_')) {
+        localStorage.removeItem(key);
+      }
+    });
+    
     // Inline critical JavaScript to reduce HTTP requests
     (function() {
       // Service Worker registration for caching
